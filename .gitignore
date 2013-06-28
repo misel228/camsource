@@ -15,3 +15,7 @@
 *.exe
 *.out
 *.app
+
+#backup files
+*.bak
+*~

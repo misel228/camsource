@@ -1,0 +1,194 @@
+$Id: ChangeLog,v 1.56 2003/05/01 10:35:39 dfx Exp $
+
+May 1 2003
+	- Released 0.7.0.
+
+Apr 20 2003
+	- Brought back the -c flag with changed behavior to
+	  fit the new modular input plugin design.
+	- Applied (modified) patch sent by Nigel Roberts
+	  implementing the <autobrightness> feature. Credits
+	  also go to Stefan Meyer for the original code from
+	  wwwcam.
+
+Mar 9 2003
+	- Http requests can now take a query string, which will
+	  be ignored when looking for a matching config vpath.
+	- Fixed ftp uploading for ftpds which give multi-line
+	  replies in a certain format.
+	- Support basic http authentication.
+
+Feb 15 2003
+	- Added experimental xwd (x11 screen shot) input plugin.
+
+Jan 26 2003
+	- Modularized the video input code, removed camdev.* files.
+	  Their functionality was moved to libinput_v4l. The
+	  '-c' command line switch doesn't work now. Will fix.
+	- Libfilewrite and libftpup now have the capability of
+	  timestamping filenames.
+
+Jan 23 2003
+	- Applied patch by Jaco Greeff to give libftpup a better
+	  sleep time precision, compensating for long upload times.
+
+Jan 20 2003
+	- Changed the '~' filename postfix to '.tmp' in libfilewrite
+	  and libftpup.
+
+Jan 18 2003
+	- Added scripts/camsource2bmp.pl example script.
+	- Added the smallest filter ever: color inverting.
+	- Implemented -r and -s/-k command line switches to restart
+	  and shut down camsource.
+
+Jan 16 2003
+	- Reworked _private handling a bit. Avoid repeated parsing
+	  or large xml trees.
+	- Simplyfied per-instance filter storage to make use of
+	  libxml's _private struct member.
+
+Jan 15 2003
+	- Added <cmd> option to camdev section to support external
+	  trigger for capture on/off events.
+
+Jan 14 2003
+	- The http module can now server raw image data, plus it now
+	  supports 'connection: keep-alive'. Combining those two
+	  features, it is possible for third-party processes to
+	  access the video data.
+	- Fixed old jpeg compression crash bug
+	- Added capability of handling multiple input v4l devices
+	  at the same time.
+
+Jan 5 2003
+	- Added motiondetect custom config. Filter works better
+	  now too.
+	- Added regrab filter.
+	- Added per-instance context storage for filters.
+	- Modified a few filters to make use of the new per-
+	  instance storage space to save a bit cpu (?)
+
+Jan 4 2003
+	- Added a preliminary motiondetect filter. More to do.
+	- Changed the filter handling a bit, to make it possble
+	  to have filters which "swallow" the image.
+	- Added vloopback module, courtesy of Cyril Rocheteau.
+	- Tried to make up some login to autodetect whether overlay
+	  is supported, and gracefully ignore it if it isn't. Same
+	  goes for unsupported fps settings (e.g. bttv).
+
+Dec 31 2002
+	- Included patch sent by Cyril Rocheteau to allow camsource
+	  to work with drivers which don't support overlay
+	  capturing (e.g. meye).
+
+--- 0.6.0 ---
+
+Dec 17 2002
+	- Released 0.6.0.
+
+Dec 13 2002
+	- Added norm and picture metric video device settings.
+
+Nov 21 2002
+	- Added support for the mmap v4l api. Fixes bttv support.
+
+--- 0.5.1 ---
+
+Nov 14 2002
+	- Released 0.5.1.
+	- Changed palette ordering so yuv420p gets priority over
+	  yuv420 due to ambiguity in the specs.
+
+--- 0.5.0 ---
+
+Oct 7 2002
+	- Released 0.5.0.
+
+Oct  2 2002
+	- Added bw filter
+
+Sep 28 2002
+	- Supports more palettes. They're untested and probably broken
+	- Added more information to palette struct and added palette probing
+	  to -c switch output.
+	- Added experimental grayscale palette support
+	- Pumped version to 0.5.0a.
+
+--- 0.4.0 ---
+
+Sep 27 2002
+	- Released camsource 0.4.0.
+
+Sep 26 2002
+	- Fixed various compilation issues, including compatibility with
+	  libxml1.
+
+Sep 25 2002
+	- Added version information to modules
+
+Sep 24 2002
+	- Added <scale> option to resize filter
+	- Added a rotate image filter
+	- Per request, added feature to filewrite and ftpup module to allow
+	  grabbing of a single frame, then exit.
+	- Fixed small logging typo
+	- Pumped version to 0.4.0a.
+
+--- 0.3.0 ---
+
+Sep 22 2002
+	- Released 0.3.0
+	- Fixed small typo bug in http logging
+
+Sep 21 2002
+	- Removed unnecessary headers from make install
+	- libtext can now read text from a file and from a pipe/command.
+	- Added quick and dirty rgb <-> bgr module.
+
+Sep 20 2002
+	- With nonblocking sockets, the delay before closing a sending
+	  socket shouldn't be necessary any more.
+	- Added text module to all worker modules in conf file, plus docs
+	- Finished work on libtext with lots of fancy stuff for now
+	- Started work in text overlay module
+	- Made all (?) socket stuff time out properly and added better
+	  error/condition reporting
+	- Converted all socket stuff to nonblocking sockets
+	- Made custom jpeg compression quality levels possible (<jpegqual>)
+	- Pumped devel version number to 0.2.1
+
+--- 0.2.0 ---
+
+Sep 19 2002
+	- Released 0.2.0
+	- Added timeout option to socket_accept()
+	- Finished ftpup functionality with adding safemode
+	- Lots of code cleanups and improvements in ftpup
+
+Sep 18 2002
+	- Started work on ftpup module
+	- Added a few socket functions
+	- Added <cmd> tag to filewrite mod
+	- Added config_homedir() for "~/" expansion
+	- Added grabbed image aging and struct grab_ctx handling to prevent
+	  that an outdated image gets output accidently
+	- Improved logging facilities
+	- Converted lots of functions to static to prevent global symbol /
+	  namespace clashes
+
+Sep 17 2002
+	- Created config option to select input channel
+	- Sanity check grabbing width/height values
+	- Can now specify "default", "max" etc in certain config options
+	- Video device is opened before going to background, so errors show up
+	  on console.
+	- Pumped development version number to 0.1.1
+	- Added filewrite module
+
+--- 0.1.0 ---
+
+Sep 16 2002
+	- Released version 0.1.0
+

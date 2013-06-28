@@ -1,0 +1,569 @@
+# Makefile.in generated automatically by automake 1.5 from Makefile.am.
+
+# Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
+# Free Software Foundation, Inc.
+# This Makefile.in is free software; the Free Software Foundation
+# gives unlimited permission to copy and/or distribute it,
+# with or without modifications, as long as this notice is preserved.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+@SET_MAKE@
+
+SHELL = @SHELL@
+
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+VPATH = @srcdir@
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+bindir = @bindir@
+sbindir = @sbindir@
+libexecdir = @libexecdir@
+datadir = @datadir@
+sysconfdir = @sysconfdir@
+sharedstatedir = @sharedstatedir@
+localstatedir = @localstatedir@
+libdir = @libdir@
+infodir = @infodir@
+mandir = @mandir@
+includedir = @includedir@
+oldincludedir = /usr/include
+pkgdatadir = $(datadir)/@PACKAGE@
+pkglibdir = $(libdir)/@PACKAGE@
+pkgincludedir = $(includedir)/@PACKAGE@
+top_builddir = ..
+
+ACLOCAL = @ACLOCAL@
+AUTOCONF = @AUTOCONF@
+AUTOMAKE = @AUTOMAKE@
+AUTOHEADER = @AUTOHEADER@
+
+INSTALL = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+INSTALL_DATA = @INSTALL_DATA@
+INSTALL_SCRIPT = @INSTALL_SCRIPT@
+INSTALL_HEADER = $(INSTALL_DATA)
+transform = @program_transform_name@
+NORMAL_INSTALL = :
+PRE_INSTALL = :
+POST_INSTALL = :
+NORMAL_UNINSTALL = :
+PRE_UNINSTALL = :
+POST_UNINSTALL = :
+host_alias = @host_alias@
+host_triplet = @host@
+AMTAR = @AMTAR@
+AS = @AS@
+AWK = @AWK@
+CC = @CC@
+DEPDIR = @DEPDIR@
+DLLTOOL = @DLLTOOL@
+ECHO = @ECHO@
+EXEEXT = @EXEEXT@
+INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+LIBTOOL = @LIBTOOL@
+LN_S = @LN_S@
+OBJDUMP = @OBJDUMP@
+OBJEXT = @OBJEXT@
+PACKAGE = @PACKAGE@
+RANLIB = @RANLIB@
+STRIP = @STRIP@
+VERSION = @VERSION@
+am__include = @am__include@
+am__quote = @am__quote@
+install_sh = @install_sh@
+
+bin_PROGRAMS = camsource
+pkglib_LTLIBRARIES = libwc_serv.la libjpeg_comp.la libflip.la \
+	libresize.la libsocket.la libhttp.la libfilewrite.la \
+	libftpup.la libtext.la librgbbgr.la librotate.la \
+	libbw.la libvloopback.la libmotiondetect.la libregrab.la \
+	libinvert.la libinput_v4l.la libinput_xwd.la
+
+
+pkginclude_HEADERS = configfile.h filter.h grab.h \
+	image.h jpeg.h mod_handle.h module.h unpalette.h xmlhelp.h \
+	socket.h log.h
+
+
+camsource_SOURCES = main.c grab.c unpalette.c configfile.c \
+	mod_handle.c image.c filter.c xmlhelp.c log.c main.h
+
+
+libinput_v4l_la_SOURCES = input_v4l.c
+libinput_xwd_la_SOURCES = input_xwd.c
+
+libwc_serv_la_SOURCES = wc_serv.c wc_serv.h
+
+libjpeg_comp_la_SOURCES = jpeg.c
+libjpeg_comp_la_LDFLAGS = -ljpeg
+
+libflip_la_SOURCES = flip.c
+libresize_la_SOURCES = resize.c
+libsocket_la_SOURCES = socket.c
+libhttp_la_SOURCES = http.c http.h
+libfilewrite_la_SOURCES = filewrite.c filewrite.h
+libftpup_la_SOURCES = ftpup.c ftpup.h
+libtext_la_SOURCES = text.c text.h font_6x11.h
+librgbbgr_la_SOURCES = rgbbgr.c
+librotate_la_SOURCES = rotate.c
+libbw_la_SOURCES = bw.c
+libvloopback_la_SOURCES = vloopback.c vloopback.h
+libmotiondetect_la_SOURCES = motiondetect.c
+libregrab_la_SOURCES = regrab.c
+libinvert_la_SOURCES = invert.c
+subdir = src
+mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+CONFIG_HEADER = $(top_builddir)/config.h
+CONFIG_CLEAN_FILES =
+LTLIBRARIES = $(pkglib_LTLIBRARIES)
+
+libbw_la_LDFLAGS =
+libbw_la_LIBADD =
+am_libbw_la_OBJECTS = bw.lo
+libbw_la_OBJECTS = $(am_libbw_la_OBJECTS)
+libfilewrite_la_LDFLAGS =
+libfilewrite_la_LIBADD =
+am_libfilewrite_la_OBJECTS = filewrite.lo
+libfilewrite_la_OBJECTS = $(am_libfilewrite_la_OBJECTS)
+libflip_la_LDFLAGS =
+libflip_la_LIBADD =
+am_libflip_la_OBJECTS = flip.lo
+libflip_la_OBJECTS = $(am_libflip_la_OBJECTS)
+libftpup_la_LDFLAGS =
+libftpup_la_LIBADD =
+am_libftpup_la_OBJECTS = ftpup.lo
+libftpup_la_OBJECTS = $(am_libftpup_la_OBJECTS)
+libhttp_la_LDFLAGS =
+libhttp_la_LIBADD =
+am_libhttp_la_OBJECTS = http.lo
+libhttp_la_OBJECTS = $(am_libhttp_la_OBJECTS)
+libinput_v4l_la_LDFLAGS =
+libinput_v4l_la_LIBADD =
+am_libinput_v4l_la_OBJECTS = input_v4l.lo
+libinput_v4l_la_OBJECTS = $(am_libinput_v4l_la_OBJECTS)
+libinput_xwd_la_LDFLAGS =
+libinput_xwd_la_LIBADD =
+am_libinput_xwd_la_OBJECTS = input_xwd.lo
+libinput_xwd_la_OBJECTS = $(am_libinput_xwd_la_OBJECTS)
+libinvert_la_LDFLAGS =
+libinvert_la_LIBADD =
+am_libinvert_la_OBJECTS = invert.lo
+libinvert_la_OBJECTS = $(am_libinvert_la_OBJECTS)
+libjpeg_comp_la_LIBADD =
+am_libjpeg_comp_la_OBJECTS = jpeg.lo
+libjpeg_comp_la_OBJECTS = $(am_libjpeg_comp_la_OBJECTS)
+libmotiondetect_la_LDFLAGS =
+libmotiondetect_la_LIBADD =
+am_libmotiondetect_la_OBJECTS = motiondetect.lo
+libmotiondetect_la_OBJECTS = $(am_libmotiondetect_la_OBJECTS)
+libregrab_la_LDFLAGS =
+libregrab_la_LIBADD =
+am_libregrab_la_OBJECTS = regrab.lo
+libregrab_la_OBJECTS = $(am_libregrab_la_OBJECTS)
+libresize_la_LDFLAGS =
+libresize_la_LIBADD =
+am_libresize_la_OBJECTS = resize.lo
+libresize_la_OBJECTS = $(am_libresize_la_OBJECTS)
+librgbbgr_la_LDFLAGS =
+librgbbgr_la_LIBADD =
+am_librgbbgr_la_OBJECTS = rgbbgr.lo
+librgbbgr_la_OBJECTS = $(am_librgbbgr_la_OBJECTS)
+librotate_la_LDFLAGS =
+librotate_la_LIBADD =
+am_librotate_la_OBJECTS = rotate.lo
+librotate_la_OBJECTS = $(am_librotate_la_OBJECTS)
+libsocket_la_LDFLAGS =
+libsocket_la_LIBADD =
+am_libsocket_la_OBJECTS = socket.lo
+libsocket_la_OBJECTS = $(am_libsocket_la_OBJECTS)
+libtext_la_LDFLAGS =
+libtext_la_LIBADD =
+am_libtext_la_OBJECTS = text.lo
+libtext_la_OBJECTS = $(am_libtext_la_OBJECTS)
+libvloopback_la_LDFLAGS =
+libvloopback_la_LIBADD =
+am_libvloopback_la_OBJECTS = vloopback.lo
+libvloopback_la_OBJECTS = $(am_libvloopback_la_OBJECTS)
+libwc_serv_la_LDFLAGS =
+libwc_serv_la_LIBADD =
+am_libwc_serv_la_OBJECTS = wc_serv.lo
+libwc_serv_la_OBJECTS = $(am_libwc_serv_la_OBJECTS)
+bin_PROGRAMS = camsource$(EXEEXT)
+PROGRAMS = $(bin_PROGRAMS)
+
+am_camsource_OBJECTS = main.$(OBJEXT) grab.$(OBJEXT) unpalette.$(OBJEXT) \
+	configfile.$(OBJEXT) mod_handle.$(OBJEXT) image.$(OBJEXT) \
+	filter.$(OBJEXT) xmlhelp.$(OBJEXT) log.$(OBJEXT)
+camsource_OBJECTS = $(am_camsource_OBJECTS)
+camsource_LDADD = $(LDADD)
+camsource_DEPENDENCIES =
+camsource_LDFLAGS =
+
+DEFS = @DEFS@
+DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+CPPFLAGS = @CPPFLAGS@
+LDFLAGS = @LDFLAGS@
+LIBS = @LIBS@
+depcomp = $(SHELL) $(top_srcdir)/depcomp
+@AMDEP_TRUE@DEP_FILES = $(DEPDIR)/bw.Plo $(DEPDIR)/configfile.Po \
+@AMDEP_TRUE@	$(DEPDIR)/filewrite.Plo $(DEPDIR)/filter.Po \
+@AMDEP_TRUE@	$(DEPDIR)/flip.Plo $(DEPDIR)/ftpup.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/grab.Po $(DEPDIR)/http.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/image.Po $(DEPDIR)/input_v4l.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/input_xwd.Plo $(DEPDIR)/invert.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/jpeg.Plo $(DEPDIR)/log.Po \
+@AMDEP_TRUE@	$(DEPDIR)/main.Po $(DEPDIR)/mod_handle.Po \
+@AMDEP_TRUE@	$(DEPDIR)/motiondetect.Plo $(DEPDIR)/regrab.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/resize.Plo $(DEPDIR)/rgbbgr.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/rotate.Plo $(DEPDIR)/socket.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/text.Plo $(DEPDIR)/unpalette.Po \
+@AMDEP_TRUE@	$(DEPDIR)/vloopback.Plo $(DEPDIR)/wc_serv.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/xmlhelp.Po
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
+	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+CCLD = $(CC)
+LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+CFLAGS = @CFLAGS@
+DIST_SOURCES = $(libbw_la_SOURCES) $(libfilewrite_la_SOURCES) \
+	$(libflip_la_SOURCES) $(libftpup_la_SOURCES) \
+	$(libhttp_la_SOURCES) $(libinput_v4l_la_SOURCES) \
+	$(libinput_xwd_la_SOURCES) $(libinvert_la_SOURCES) \
+	$(libjpeg_comp_la_SOURCES) $(libmotiondetect_la_SOURCES) \
+	$(libregrab_la_SOURCES) $(libresize_la_SOURCES) \
+	$(librgbbgr_la_SOURCES) $(librotate_la_SOURCES) \
+	$(libsocket_la_SOURCES) $(libtext_la_SOURCES) \
+	$(libvloopback_la_SOURCES) $(libwc_serv_la_SOURCES) \
+	$(camsource_SOURCES)
+HEADERS = $(pkginclude_HEADERS)
+
+DIST_COMMON = $(pkginclude_HEADERS) Makefile.am Makefile.in
+SOURCES = $(libbw_la_SOURCES) $(libfilewrite_la_SOURCES) $(libflip_la_SOURCES) $(libftpup_la_SOURCES) $(libhttp_la_SOURCES) $(libinput_v4l_la_SOURCES) $(libinput_xwd_la_SOURCES) $(libinvert_la_SOURCES) $(libjpeg_comp_la_SOURCES) $(libmotiondetect_la_SOURCES) $(libregrab_la_SOURCES) $(libresize_la_SOURCES) $(librgbbgr_la_SOURCES) $(librotate_la_SOURCES) $(libsocket_la_SOURCES) $(libtext_la_SOURCES) $(libvloopback_la_SOURCES) $(libwc_serv_la_SOURCES) $(camsource_SOURCES)
+
+all: all-am
+
+.SUFFIXES:
+.SUFFIXES: .c .lo .o .obj
+
+mostlyclean-libtool:
+	-rm -f *.lo
+
+clean-libtool:
+	-rm -rf .libs _libs
+
+distclean-libtool:
+	-rm -f libtool
+$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.ac $(ACLOCAL_M4)
+	cd $(top_srcdir) && \
+	  $(AUTOMAKE) --gnu  src/Makefile
+Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+	cd $(top_builddir) && \
+	  CONFIG_HEADERS= CONFIG_LINKS= \
+	  CONFIG_FILES=$(subdir)/$@ $(SHELL) ./config.status
+install-pkglibLTLIBRARIES: $(pkglib_LTLIBRARIES)
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(pkglibdir)
+	@list='$(pkglib_LTLIBRARIES)'; for p in $$list; do \
+	  if test -f $$p; then \
+	    echo " $(LIBTOOL) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(pkglibdir)/$$p"; \
+	    $(LIBTOOL) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(pkglibdir)/$$p; \
+	  else :; fi; \
+	done
+
+uninstall-pkglibLTLIBRARIES:
+	@$(NORMAL_UNINSTALL)
+	@list='$(pkglib_LTLIBRARIES)'; for p in $$list; do \
+	  echo " $(LIBTOOL) --mode=uninstall rm -f $(DESTDIR)$(pkglibdir)/$$p"; \
+	  $(LIBTOOL) --mode=uninstall rm -f $(DESTDIR)$(pkglibdir)/$$p; \
+	done
+
+clean-pkglibLTLIBRARIES:
+	-test -z "$(pkglib_LTLIBRARIES)" || rm -f $(pkglib_LTLIBRARIES)
+libbw.la: $(libbw_la_OBJECTS) $(libbw_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libbw_la_LDFLAGS) $(libbw_la_OBJECTS) $(libbw_la_LIBADD) $(LIBS)
+libfilewrite.la: $(libfilewrite_la_OBJECTS) $(libfilewrite_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libfilewrite_la_LDFLAGS) $(libfilewrite_la_OBJECTS) $(libfilewrite_la_LIBADD) $(LIBS)
+libflip.la: $(libflip_la_OBJECTS) $(libflip_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libflip_la_LDFLAGS) $(libflip_la_OBJECTS) $(libflip_la_LIBADD) $(LIBS)
+libftpup.la: $(libftpup_la_OBJECTS) $(libftpup_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libftpup_la_LDFLAGS) $(libftpup_la_OBJECTS) $(libftpup_la_LIBADD) $(LIBS)
+libhttp.la: $(libhttp_la_OBJECTS) $(libhttp_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libhttp_la_LDFLAGS) $(libhttp_la_OBJECTS) $(libhttp_la_LIBADD) $(LIBS)
+libinput_v4l.la: $(libinput_v4l_la_OBJECTS) $(libinput_v4l_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libinput_v4l_la_LDFLAGS) $(libinput_v4l_la_OBJECTS) $(libinput_v4l_la_LIBADD) $(LIBS)
+libinput_xwd.la: $(libinput_xwd_la_OBJECTS) $(libinput_xwd_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libinput_xwd_la_LDFLAGS) $(libinput_xwd_la_OBJECTS) $(libinput_xwd_la_LIBADD) $(LIBS)
+libinvert.la: $(libinvert_la_OBJECTS) $(libinvert_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libinvert_la_LDFLAGS) $(libinvert_la_OBJECTS) $(libinvert_la_LIBADD) $(LIBS)
+libjpeg_comp.la: $(libjpeg_comp_la_OBJECTS) $(libjpeg_comp_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libjpeg_comp_la_LDFLAGS) $(libjpeg_comp_la_OBJECTS) $(libjpeg_comp_la_LIBADD) $(LIBS)
+libmotiondetect.la: $(libmotiondetect_la_OBJECTS) $(libmotiondetect_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libmotiondetect_la_LDFLAGS) $(libmotiondetect_la_OBJECTS) $(libmotiondetect_la_LIBADD) $(LIBS)
+libregrab.la: $(libregrab_la_OBJECTS) $(libregrab_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libregrab_la_LDFLAGS) $(libregrab_la_OBJECTS) $(libregrab_la_LIBADD) $(LIBS)
+libresize.la: $(libresize_la_OBJECTS) $(libresize_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libresize_la_LDFLAGS) $(libresize_la_OBJECTS) $(libresize_la_LIBADD) $(LIBS)
+librgbbgr.la: $(librgbbgr_la_OBJECTS) $(librgbbgr_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(librgbbgr_la_LDFLAGS) $(librgbbgr_la_OBJECTS) $(librgbbgr_la_LIBADD) $(LIBS)
+librotate.la: $(librotate_la_OBJECTS) $(librotate_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(librotate_la_LDFLAGS) $(librotate_la_OBJECTS) $(librotate_la_LIBADD) $(LIBS)
+libsocket.la: $(libsocket_la_OBJECTS) $(libsocket_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libsocket_la_LDFLAGS) $(libsocket_la_OBJECTS) $(libsocket_la_LIBADD) $(LIBS)
+libtext.la: $(libtext_la_OBJECTS) $(libtext_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libtext_la_LDFLAGS) $(libtext_la_OBJECTS) $(libtext_la_LIBADD) $(LIBS)
+libvloopback.la: $(libvloopback_la_OBJECTS) $(libvloopback_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libvloopback_la_LDFLAGS) $(libvloopback_la_OBJECTS) $(libvloopback_la_LIBADD) $(LIBS)
+libwc_serv.la: $(libwc_serv_la_OBJECTS) $(libwc_serv_la_DEPENDENCIES) 
+	$(LINK) -rpath $(pkglibdir) $(libwc_serv_la_LDFLAGS) $(libwc_serv_la_OBJECTS) $(libwc_serv_la_LIBADD) $(LIBS)
+install-binPROGRAMS: $(bin_PROGRAMS)
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(bindir)
+	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+	  p1=`echo $$p|sed 's/$(EXEEXT)$$//'`; \
+	  if test -f $$p \
+	     || test -f $$p1 \
+	  ; then \
+	    f=`echo $$p1|sed '$(transform);s/$$/$(EXEEXT)/'`; \
+	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f"; \
+	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f; \
+	  else :; fi; \
+	done
+
+uninstall-binPROGRAMS:
+	@$(NORMAL_UNINSTALL)
+	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+	  f=`echo $$p|sed 's/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/'`; \
+	  echo " rm -f $(DESTDIR)$(bindir)/$$f"; \
+	  rm -f $(DESTDIR)$(bindir)/$$f; \
+	done
+
+clean-binPROGRAMS:
+	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+camsource$(EXEEXT): $(camsource_OBJECTS) $(camsource_DEPENDENCIES) 
+	@rm -f camsource$(EXEEXT)
+	$(LINK) $(camsource_LDFLAGS) $(camsource_OBJECTS) $(camsource_LDADD) $(LIBS)
+
+mostlyclean-compile:
+	-rm -f *.$(OBJEXT) core *.core
+
+distclean-compile:
+	-rm -f *.tab.c
+
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/bw.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/configfile.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/filewrite.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/filter.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/flip.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ftpup.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/grab.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/http.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/image.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/input_v4l.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/input_xwd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/invert.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/jpeg.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/log.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/main.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mod_handle.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/motiondetect.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/regrab.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/resize.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/rgbbgr.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/rotate.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/socket.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/text.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/unpalette.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/vloopback.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/wc_serv.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/xmlhelp.Po@am__quote@
+
+distclean-depend:
+	-rm -rf $(DEPDIR)
+
+.c.o:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(COMPILE) -c `test -f $< || echo '$(srcdir)/'`$<
+
+.c.obj:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(COMPILE) -c `cygpath -w $<`
+
+.c.lo:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Plo' tmpdepfile='$(DEPDIR)/$*.TPlo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(LTCOMPILE) -c -o $@ `test -f $< || echo '$(srcdir)/'`$<
+CCDEPMODE = @CCDEPMODE@
+uninstall-info-am:
+install-pkgincludeHEADERS: $(pkginclude_HEADERS)
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(pkgincludedir)
+	@list='$(pkginclude_HEADERS)'; for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+	  echo " $(INSTALL_HEADER) $$d$$p $(DESTDIR)$(pkgincludedir)/$$f"; \
+	  $(INSTALL_HEADER) $$d$$p $(DESTDIR)$(pkgincludedir)/$$f; \
+	done
+
+uninstall-pkgincludeHEADERS:
+	@$(NORMAL_UNINSTALL)
+	@list='$(pkginclude_HEADERS)'; for p in $$list; do \
+	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+	  echo " rm -f $(DESTDIR)$(pkgincludedir)/$$f"; \
+	  rm -f $(DESTDIR)$(pkgincludedir)/$$f; \
+	done
+
+tags: TAGS
+
+ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	mkid -fID $$unique $(LISP)
+
+TAGS:  $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) \
+		$(TAGS_FILES) $(LISP)
+	tags=; \
+	here=`pwd`; \
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	test -z "$(ETAGS_ARGS)$$unique$(LISP)$$tags" \
+	  || etags $(ETAGS_ARGS) $$tags  $$unique $(LISP)
+
+GTAGS:
+	here=`CDPATH=: && cd $(top_builddir) && pwd` \
+	  && cd $(top_srcdir) \
+	  && gtags -i $(GTAGS_ARGS) $$here
+
+distclean-tags:
+	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH
+
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+
+top_distdir = ..
+distdir = $(top_distdir)/$(PACKAGE)-$(VERSION)
+
+distdir: $(DISTFILES)
+	@for file in $(DISTFILES); do \
+	  if test -f $$file; then d=.; else d=$(srcdir); fi; \
+	  dir=`echo "$$file" | sed -e 's,/[^/]*$$,,'`; \
+	  if test "$$dir" != "$$file" && test "$$dir" != "."; then \
+	    $(mkinstalldirs) "$(distdir)/$$dir"; \
+	  fi; \
+	  if test -d $$d/$$file; then \
+	    cp -pR $$d/$$file $(distdir) \
+	    || exit 1; \
+	  else \
+	    test -f $(distdir)/$$file \
+	    || cp -p $$d/$$file $(distdir)/$$file \
+	    || exit 1; \
+	  fi; \
+	done
+check-am: all-am
+check: check-am
+all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
+
+installdirs:
+	$(mkinstalldirs) $(DESTDIR)$(pkglibdir) $(DESTDIR)$(bindir) $(DESTDIR)$(pkgincludedir)
+
+install: install-am
+install-exec: install-exec-am
+install-data: install-data-am
+uninstall: uninstall-am
+
+install-am: all-am
+	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+
+installcheck: installcheck-am
+install-strip:
+	$(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+	  `test -z '$(STRIP)' || \
+	    echo "INSTALL_PROGRAM_ENV=STRIPPROG='$(STRIP)'"` install
+mostlyclean-generic:
+
+clean-generic:
+
+distclean-generic:
+	-rm -f Makefile $(CONFIG_CLEAN_FILES) stamp-h stamp-h[0-9]*
+
+maintainer-clean-generic:
+	@echo "This command is intended for maintainers to use"
+	@echo "it deletes files that may require special tools to rebuild."
+clean: clean-am
+
+clean-am: clean-binPROGRAMS clean-generic clean-libtool \
+	clean-pkglibLTLIBRARIES mostlyclean-am
+
+distclean: distclean-am
+
+distclean-am: clean-am distclean-compile distclean-depend \
+	distclean-generic distclean-libtool distclean-tags
+
+dvi: dvi-am
+
+dvi-am:
+
+info: info-am
+
+info-am:
+
+install-data-am: install-pkgincludeHEADERS
+
+install-exec-am: install-binPROGRAMS install-pkglibLTLIBRARIES
+
+install-info: install-info-am
+
+install-man:
+
+installcheck-am:
+
+maintainer-clean: maintainer-clean-am
+
+maintainer-clean-am: distclean-am maintainer-clean-generic
+
+mostlyclean: mostlyclean-am
+
+mostlyclean-am: mostlyclean-compile mostlyclean-generic \
+	mostlyclean-libtool
+
+uninstall-am: uninstall-binPROGRAMS uninstall-info-am \
+	uninstall-pkgincludeHEADERS uninstall-pkglibLTLIBRARIES
+
+.PHONY: GTAGS all all-am check check-am clean clean-binPROGRAMS \
+	clean-generic clean-libtool clean-pkglibLTLIBRARIES distclean \
+	distclean-compile distclean-depend distclean-generic \
+	distclean-libtool distclean-tags distdir dvi dvi-am info \
+	info-am install install-am install-binPROGRAMS install-data \
+	install-data-am install-exec install-exec-am install-info \
+	install-info-am install-man install-pkgincludeHEADERS \
+	install-pkglibLTLIBRARIES install-strip installcheck \
+	installcheck-am installdirs maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-compile \
+	mostlyclean-generic mostlyclean-libtool tags uninstall \
+	uninstall-am uninstall-binPROGRAMS uninstall-info-am \
+	uninstall-pkgincludeHEADERS uninstall-pkglibLTLIBRARIES
+
+
+# $Id: Makefile.in,v 1.37 2003/05/01 10:29:12 dfx Exp $
+# Tell versions [3.59,3.63) of GNU make to not export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:

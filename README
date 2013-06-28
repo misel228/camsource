@@ -1,0 +1,182 @@
+Quickstart
+==========
+
+$ ./configure
+$ make
+
+Optional (you can try camsource without installing it):
+# make install
+
+Take a look at the included sample config file (camsource.conf.example).
+It should be somewhat usable for experimental uses (although the
+hardware section <camdev> may need tweaking), but you should change it
+to suit your needs if you plan to use camsource. Put the config file in
+a place where camsource can find it (such as .camsource in your home
+dir, or /usr/local/etc/camsource.conf). The start camsource:
+
+$ camsource
+
+Or, if you didn't install it:
+
+$ src/camsource
+
+If camsource starts up without errors, it will go into background
+automatically. Note that any errors from the grabbing thread show up
+_after_ the logfile has been started, so you should check the logfile
+for any errors (by default .camsource.log in your home dir). If
+everything worked right and camsource shows up in your process list
+(multiple time as it's multithreaded), feel free to try it
+out. With the default config, point your browser to
+<http://localhost:9192/> to see a 320x240 snapshot. The "/large" path
+gives you an unresized snapshot. If the images appear mirrored, edit
+your config and disable the "flip" module (it's enabled by default to
+mirror all images).
+
+With the default config, you have multiple options for getting an
+animated webcam display:
+
+http://host:9192/
+http://host:9192/large
+  Using a javascript html page, you can continually reload these images
+  to get an animation. The "camserv" software includes such a javascript
+  snippet (javascript.txt), see <http://cserv.sourceforge.net/>.
+
+http://host:9192/multipart
+http://host:9192/multipart-large
+  These urls produce a multipart jpeg stream at a given fps. Netscape
+  and mozilla can display and animate those without plugin (even though
+  you may need to embed the url as image into a html page). This jpeg
+  stream is compatible to what "camserv" produces (see above for url).
+  To support multipart jpegs on other browsers such as ie, a java applet
+  is required. Cambozola does an excellent job at this. See
+  <http://www.charliemouse.com/code/cambozola/index.html>.
+
+http://host:8888/
+http://host:8889/
+  These are pseudo-urls and not accessible through a browser. They
+  produce an output compatible to "webcam_server," and the java applet
+  included with webcam_server can be use to access these urls and
+  animate the images. Note that even though webcam_server allows you to
+  get a snapshot image when you point a browser at its url, the
+  camsource module doesn't do this; point your browser at one of the
+  other urls above instead. You can find webcam_server and the java
+  applet at <http://donn.dyndns.org/portalofnnod/webcam_server.html>.
+
+http://host:9192/largequal
+  This is the unresized grabbed frame with a high jpeg compression
+  quality (80). It is about twice the size of the default "/large"
+  image. Use for your personal viewing pleasure or something.
+
+
+
+Details (What is Camsource anyway?)
+===================================
+
+Camsource opens a video4linux device, grabs frames from it and does
+various things with those frames. What it does with them depends solely
+on the config file, which is in xml format.
+
+Camsource uses plugins (also called modules) to provide functionality.
+The plugin configuration happens through the xml config file. The core
+camsource program, as well as the plugins, are heavily multithreaded, to
+make sure different plugins don't interfere with each other, and with
+the grabbing process.
+
+Currently included plugins are:
+
+wc_serv
+  Produces output compatible with webcam_server. You can use its java
+  applet to view the images.
+
+http
+  Generic http module, designed to answer requests by web browsers. It
+  lets you define several virtual paths, each with distinct properties.
+  Currently it is able to produce a single still image, as well as an
+  animage multipart jpeg stream at a given framerate, usable on
+  netscape/mozilla browsers or using a java applet such as Cambozola.
+  Note that the paths you define can also include a query string such as
+  "/image.jpg?large"; the requested url will always be matched exactly
+  to the letter.
+
+filewrite
+  Periodically saves a snapshot image to a local jpeg file. 'Nuff said.
+
+ftpup
+  Works similar to the filewrite module, only that it uploads the snapshot
+  to an ftp server instead of writing it out locally.
+
+jpeg_comp
+  This plugin doesn't do anything by itself, but provides jpeg
+  compression functionality for various other modules. It will be
+  auto-loaded as dependency, but you can give a default jpeg compression
+  quality level for this module in the config file.
+
+flip (filter)
+  Lets you flip an image horizontally or vertically before doing
+  anything else with it. Useful for cameras which produce mirrored
+  images (such as my creative webcam 5).
+
+resize (filter)
+  Lets you scale an image to a specific size. Actually it doesn't
+  "scale" much, it just does nearest-neighbor matching (read: bad
+  quality). The filter lets you specify the target image size as a fixed
+  width/height value pair, or as a percentage of the original image.
+
+text (filter)
+  This filter can add a text overlay containing a timestamp to an
+  image. It has some special functionality with regards to the config
+  file, which allow it to have a global config, and then override
+  certain options in the per-module filter definition. See the
+  example config file for details.
+  The text to display can be set in the config file, or it can be
+  read on demand from a file or from a command's stdout (pipe).
+
+rgbbgr (filter)
+  Swaps the red and blue information. Activate it in case your camera
+  produces images with this reversed.
+
+rotate (filter)
+  This filter can rotate the image left or right by 90 degrees (or in
+  other words, by 90 or 270 degrees). Rotating by 180 degrees is not
+  supported, as the same result can be achieved by "flip"ping the image
+  both horizontally and vertically. Keep in mind that after rotating,
+  the image's width and height values will be swapped, so when you
+  intend to use the rotate filter frequently together with the resize
+  module, you should probably specify the final image size as a
+  percentage (scale) instead of a fixed height/width pair.
+
+bw (filter)
+  Converts a color image into artistic grayscale / black & white.
+
+
+
+The config file should be pretty self explanatory. Every possible
+feature is present in the default config. Filters can be applied
+globally (that is, to every grabbed frame), or on a per-module basis.
+Note that the module is responsible for calling the filters, this
+doesn't happen automatically. In the case of the http module, filters
+can be applied to every frame handled by the http module, as well as on
+a per-vpath basis.
+
+Camsource looks in several places for its config file. First it looks
+for it as ".camsource" in your home dir, then checks for a
+camsource.conf file in /etc, /usr/local/etc and in the local dir. It
+also looks for a "camsource" file in /etc/defaults and
+/usr/local/etc/defaults. You can also specify a custom config file to
+use on the command line.
+
+The command line switch "-c" has been created to dump the video4linux
+video capability information to console, then exit. Use this if you're
+unsure about which frame sizes your camera supports. Optionally you can
+specify another device file to open and query (defaults to /dev/video0).
+
+
+
+Links
+=====
+
+Homepage: http://camsource.sf.net/
+
+
+$Id: README,v 1.14 2002/10/02 16:43:09 dfx Exp $
+
